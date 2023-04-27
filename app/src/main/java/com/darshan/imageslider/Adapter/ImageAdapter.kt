@@ -23,5 +23,10 @@ class ImageAdapte (imgs:Array<Int>): PagerAdapter() {
         binding.ImageItem.setImageResource(images.get(position))
         container.addView(binding.root)
         return binding.root
+
+    }
+
+    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+        container.removeView(`object` as View)
     }
 }
